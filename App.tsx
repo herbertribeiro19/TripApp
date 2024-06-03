@@ -6,14 +6,13 @@ import Slider from '@react-native-community/slider';
 const statusBarHeight = StatusBar.currentHeight;
 
 export default function App() {
-  // API_URL = https://api.openai.com/v1/chat/completions
 
-  const [days, setDays] = useState(3);
+  const [days, setDays] = useState(1);
   const [city, setCity] = useState("");
   const [loading, setLoading] = useState(false);
   const [travel, setTravel] = useState("");
 
-  const chatApiKey = 'sk-proj-TjA6pX9mFS1FG6xk1L1LT3BlbkFJZkGkh1oCYPzpjebX7mas';
+  const chatApiKey = 'KEY_API';
 
   async function buttonPress() {
     if (city === "") {
@@ -33,7 +32,7 @@ export default function App() {
         Authorization: `Bearer ${chatApiKey}`
       },
       body: JSON.stringify({
-        model: "gpt-3.5-turbo-0613",
+        model: "gpt-3.5-turbo",
         messages: [
           {
             role: 'user',
@@ -86,7 +85,7 @@ export default function App() {
 
           <Text style={styles.diasText}>Tempo de estadia: {days.toFixed(0)} dias</Text>
           <Slider
-            minimumValue={0}
+            minimumValue={1}
             maximumValue={7}
             minimumTrackTintColor='#0D546D'
             maximumTrackTintColor='#5F606A'
