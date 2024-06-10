@@ -1,4 +1,4 @@
-# Mobile App (IOS and Android) 
+# Mobile App (IOS and Android)
 The user can choose a especify city and select the days, after search, the API will return the best places to go in a trip.
 
 ## Skills
